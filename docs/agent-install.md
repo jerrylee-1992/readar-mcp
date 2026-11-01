@@ -2,20 +2,20 @@
 
 A user can ask an agent:
 
-> 请读取 https://github.com/jerrylee-1992/readar-cli/blob/codex/agent-install/skills/readar/SKILL.md ，安装 CLI 并引导我登录 Readar。
+> 请读取 https://github.com/jerrylee-1992/readar-mcp/blob/codex/agent-install/skills/readar/SKILL.md ，安装 CLI 并引导我登录 Readar。
 
-The [Readar Skill](https://github.com/jerrylee-1992/readar-cli/blob/codex/agent-install/skills/readar/SKILL.md) is the entrypoint for install-and-use requests. This guide supplies detailed installation alternatives; native Skill registration uses the agent's supported installer.
+The [Readar Skill](https://github.com/jerrylee-1992/readar-mcp/blob/codex/agent-install/skills/readar/SKILL.md) is the entrypoint for install-and-use requests. This guide supplies detailed installation alternatives; native Skill registration uses the agent's supported installer.
 
 ## Install from GitHub
 
-The official public repository is https://github.com/jerrylee-1992/readar-cli. This project is not published to npm; do not install a similarly named registry package. Use the installation-enabled `codex/agent-install` ref below, or an explicitly supplied reviewed commit SHA.
+The official public repository is https://github.com/jerrylee-1992/readar-mcp. This project is not published to npm; do not install a similarly named registry package. Use the installation-enabled `codex/agent-install` ref below, or an explicitly supplied reviewed commit SHA.
 
 1. Check `node --version`, `npm --version` and `git --version`: Node.js 22+ is required. If missing, use the user's established installation method or the official installer for their OS. One sentence to the agent starts the whole workflow; it does not remove these runtime requirements.
 2. Install from the public Git URL into npm's execution cache and verify both commands below. npm installs build dependencies and runs `prepare` to compile the executable. No manual cloning, building, global write permission or GitHub login is required:
 
    ```sh
-   npx -y --package='git+https://github.com/jerrylee-1992/readar-cli.git#codex/agent-install' readar --version
-   npx -y --package='git+https://github.com/jerrylee-1992/readar-cli.git#codex/agent-install' readar --help
+   npx -y --package='git+https://github.com/jerrylee-1992/readar-mcp.git#codex/agent-install' readar --version
+   npx -y --package='git+https://github.com/jerrylee-1992/readar-mcp.git#codex/agent-install' readar --help
    ```
 
 3. Report the version and the exact `npx ... readar` prefix for subsequent commands. Cached execution does not add a bare `readar` command to the shell's PATH. Do not report success just because npm exits successfully.
@@ -26,7 +26,7 @@ The official public repository is https://github.com/jerrylee-1992/readar-cli. T
 If the user requests a permanent bare `readar` command, clone the installation-enabled branch into an unused directory, then build and install the compiled tarball:
 
 ```sh
-git clone --branch codex/agent-install --single-branch https://github.com/jerrylee-1992/readar-cli.git readar-cli
+git clone --branch codex/agent-install --single-branch https://github.com/jerrylee-1992/readar-mcp.git readar-cli
 cd readar-cli
 npm ci
 npm pack

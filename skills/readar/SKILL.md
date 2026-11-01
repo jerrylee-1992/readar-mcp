@@ -12,13 +12,13 @@ Use the Readar CLI for the user's own saved articles, podcast transcripts, quest
 If a working `readar` executable already exists, check its `--version` and `--help`. Otherwise check Node.js 22+, npm and Git, then install and verify with:
 
 ```sh
-npx -y --package='git+https://github.com/jerrylee-1992/readar-cli.git#codex/agent-install' readar --version
-npx -y --package='git+https://github.com/jerrylee-1992/readar-cli.git#codex/agent-install' readar --help
+npx -y --package='git+https://github.com/jerrylee-1992/readar-mcp.git#codex/agent-install' readar --version
+npx -y --package='git+https://github.com/jerrylee-1992/readar-mcp.git#codex/agent-install' readar --help
 ```
 
 This builds into npm's execution cache. For every `readar` example below, use that full `npx ... readar` prefix when no standalone executable exists. Report the actual command prefix to the user. An explicitly supplied reviewed commit SHA can replace the branch ref. This project is not published to npm: do not substitute the registry package `readar-cli`.
 
-For permanent installation or missing dependencies, consult the [installation guide](https://github.com/jerrylee-1992/readar-cli/blob/codex/agent-install/docs/agent-install.md). Do not bypass an environment's script policy or request sudo for this CLI.
+For permanent installation or missing dependencies, consult the [installation guide](https://github.com/jerrylee-1992/readar-mcp/blob/codex/agent-install/docs/agent-install.md). Do not bypass an environment's script policy or request sudo for this CLI.
 
 For unified semantic search, verify that the selected CLI revision's `--help` lists `search` and the required `questions`/`thoughts` scopes. The installation ref above may predate these features; use an explicitly supplied reviewed revision that includes them. The backend must separately deploy, configure and backfill `GET /v1/search` for the required types. Installing this skill or the CLI does not enable semantic search, and local contract tests do not confirm production availability.
 
